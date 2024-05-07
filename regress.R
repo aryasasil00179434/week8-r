@@ -45,4 +45,11 @@ linearmodel<-lm(dist ~ speed)
 linearmodel
 
 
-##
+##Distance~ Independent~-17.58+3.932* Speed
+##Model Summary
+summary(linearmodel)
+
+##compare the fit.AIC value smaller~
+AIC(linearmodel)
+##BIC value smaller~
+BIC(linearmodel)
