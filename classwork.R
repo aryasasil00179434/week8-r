@@ -41,3 +41,30 @@ summary(model)
 saveRDS(model,"./insurance_model.rds")
 #Equation
 #charges ~ 11778.7+256.9*age+339.2*bmi+475.5*children -23848.5*smokerno-1035.0*regionsoutheast- 960.1*regionsouthwest
+
+
+#Model 2
+model_2<-lm(charges~
+            age+
+            bmi+
+            children+
+            smoker+
+            region)
+model_2
+summary(model_2)
+saveRDS(model_2,"./insurance_model2.rds")
+#charges~11846.03+256.97*age+338.66*bmi+474.57*children-23836.30*smokerno-1034.36*regionsoutheast-958.37*regionsouthwest
+AIC(model)
+AIC(model_2)
+BIC(model)
+BIC(model_2)
+paste('AIC of first model',round(AIC(model),2))
+paste('AIC of second model',round(AIC(model_2),2))
+
+paste('BIC of first model',round(BIC(model),2))
+paste('BIC of second model',round(BIC(model_2),2))
+
+##use format %f,%e,%g or %a for numeric objects
+#else we can use sprintf() or printf() instead of paste
+
+
